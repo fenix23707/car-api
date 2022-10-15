@@ -21,11 +21,12 @@ create table if not exists vehicles (
     model varchar(80) not null,
     "year" int,
     price numeric(12,3) not null,
-    engine_id bigint not null,
+    engine_id bigint not null unique, -- 1 to 1 relation
 
     primary key (id),
     foreign key (engine_id) references engines (id) on delete restrict on update cascade,
-    constraint check_positive check ("year" > 1800)
+    constraint check_positive check ("year" > 1800),
+    unique(make, model, "year")
 );
 
 create table if not exists colors (

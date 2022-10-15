@@ -7,5 +7,5 @@ import org.springframework.boot.runApplication
 class CarApiApplication
 
 fun main(args: Array<String>) {
-	runApplication<CarApiApplication>(*args)
+    runApplication<CarApiApplication>(*args)
 }
