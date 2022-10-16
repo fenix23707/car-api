@@ -1,3 +1,9 @@
+drop table dealers_vehicles;
+drop table colors;
+drop table vehicles;
+drop table engines;
+drop table dealers;
+
 create table if not exists dealers (
     id bigserial,
     company_name varchar(150) not null,
