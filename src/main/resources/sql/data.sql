@@ -8,15 +8,18 @@ insert into dealers (company_name, director_name, phone) values
 insert into engines (type, power) values
     ('ELECTRIC', 500),
     ('GAS', 300),
-    ('HYBRID', 700);
+    ('HYBRID', 700),
+    ('HYBRID', 400),
+    ('HYBRID', 500),
+    ('HYBRID', 900);
 
 insert into vehicles (make, model, "year", price, engine_id) values
     ('Audi', 'A3', 2022, 26990.0, 1),
     ('Audi', 'A3', 2021, 30990.0, 2),
-    ('Audi', 'A3', 2016, 15990.0, 1),
-    ('Audi', 'A4', 2023, 35990, 3),
-    ('Audi', 'A4', 2021, 29990, 2),
-    ('Mercedes‑Benz', 'A‑Class', 2020, 20990, 2);
+    ('Audi', 'A3', 2016, 15990.0, 3),
+    ('Audi', 'A4', 2023, 35990, 4),
+    ('Audi', 'A4', 2021, 29990, 5),
+    ('Mercedes‑Benz', 'A‑Class', 2020, 20990, 6);
 
 insert into colors (hex, vehicle_id) values
     ('FF5733', 1),
