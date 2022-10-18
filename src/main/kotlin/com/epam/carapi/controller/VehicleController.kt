@@ -3,7 +3,9 @@ package com.epam.carapi.controller
 import com.epam.carapi.dto.ColorDto
 import com.epam.carapi.dto.VehicleDto
 import com.epam.carapi.entity.Color
+import com.epam.carapi.entity.Dealer
 import com.epam.carapi.entity.Vehicle
+import com.epam.carapi.service.api.DealerService
 import com.epam.carapi.service.api.VehicleService
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
@@ -18,7 +20,10 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("/vehicles")
-class VehicleController(private val vehicleService: VehicleService) {
+class VehicleController(
+    private val vehicleService: VehicleService,
+    private val dealerService: DealerService
+) {
 
     @GetMapping("/{id}")
     fun getById(@PathVariable id: Long): VehicleDto {
@@ -47,5 +52,10 @@ class VehicleController(private val vehicleService: VehicleService) {
     fun addColor(@PathVariable id: Long, @RequestBody colorDto: ColorDto): ResponseEntity<Color> {
         val color = vehicleService.addColor(id, colorDto)
         return ResponseEntity(color, HttpStatus.CREATED)
+    }
+
+    @GetMapping("/{id}/dealers")
+    fun getDealers(@PathVariable id: Long): List<Dealer> {
+        return dealerService.getDealersByVehicleId(id)
     }
 }

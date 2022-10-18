@@ -8,9 +8,15 @@ import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service
 
 @Service
-class DealerServiceImpl(private val dealerRepository: DealerRepository) : DealerService {
+class DealerServiceImpl(
+    private val dealerRepository: DealerRepository,
+) : DealerService {
 
     override fun getById(id: Long): Dealer {
         return dealerRepository.findByIdOrNull(id) ?: throw DealerNotFoundException(id)
+    }
+
+    override fun getDealersByVehicleId(vehicleId: Long): List<Dealer> {
+        return dealerRepository.findAllByVehicleId(vehicleId)
     }
 }

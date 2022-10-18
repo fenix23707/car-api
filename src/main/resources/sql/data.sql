@@ -1,3 +1,9 @@
+delete from dealers_vehicles;
+delete from colors;
+delete from vehicles;
+delete from engines;
+delete from dealers;
+
 insert into dealers (company_name, director_name, phone) values
     ('driveway', 'Beaumont Colin', '(639) 928-5362'),
     ('driveway', 'Michael L. Waters', '(252) 291-6877'),
