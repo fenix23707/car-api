@@ -1,6 +1,5 @@
 package com.epam.carapi.repository.api
 
-import com.epam.carapi.entity.Dealer
 import com.epam.carapi.entity.Vehicle
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.data.jpa.repository.Query
