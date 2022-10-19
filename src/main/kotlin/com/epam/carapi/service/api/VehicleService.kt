@@ -13,6 +13,8 @@ interface VehicleService {
 
     fun getAllByMake(make: String): List<VehicleDto>
 
+    fun getVehiclesByDealerId(dealerId: Long): List<VehicleDto>
+
     fun create(vehicleDto: VehicleDto): Vehicle
 
     fun update(id: Long, vehicleDto: VehicleDto): Vehicle

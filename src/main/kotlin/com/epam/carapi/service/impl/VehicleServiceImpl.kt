@@ -29,6 +29,10 @@ class VehicleServiceImpl(
         return vehicleRepository.findAllByMake(make).map { VehicleDto.toDto(it) }
     }
 
+    override fun getVehiclesByDealerId(dealerId: Long): List<VehicleDto> {
+        return vehicleRepository.findAllByDealerId(dealerId).map { VehicleDto.toDto(it) }
+    }
+
     override fun create(vehicleDto: VehicleDto): Vehicle {
         return vehicleRepository.save(vehicleDto.toEntity())
     }
