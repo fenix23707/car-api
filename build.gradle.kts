@@ -24,8 +24,12 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
+
 	implementation ("org.postgresql:postgresql:42.5.0")
+
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	testImplementation ("org.testng:testng:7.6.1")
+	testImplementation ("org.mockito.kotlin:mockito-kotlin:4.0.0")
 }
 
 allOpen {
@@ -42,5 +46,5 @@ tasks.withType<KotlinCompile> {
 }
 
 tasks.withType<Test> {
-	useJUnitPlatform()
+	useTestNG()
 }

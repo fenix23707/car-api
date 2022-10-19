@@ -4,13 +4,13 @@ import com.epam.carapi.entity.Vehicle
 import java.math.BigDecimal
 
 data class VehicleDto(
-    val id: Long?,
-    val make: String?,
-    val model: String?,
-    val year: Int?,
-    val price: BigDecimal?,
-    val engine: EngineDto?,
-    val colors: List<ColorDto>?
+    val id: Long? = null,
+    val make: String? = null,
+    val model: String? = null,
+    val year: Int? = null,
+    val price: BigDecimal? = null,
+    val engine: EngineDto? = null,
+    val colors: List<ColorDto>? = null
 ) {
     companion object {
         fun toDto(vehicle: Vehicle): VehicleDto {
@@ -28,6 +28,7 @@ data class VehicleDto(
 
     fun toEntity(): Vehicle {
         return Vehicle(
+            id = this.id,
             make = this.make!!,
             model = this.model!!,
             year = this.year!!,
