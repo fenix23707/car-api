@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.PutMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
@@ -28,6 +29,11 @@ class VehicleController(
     @GetMapping("/{id}")
     fun getById(@PathVariable id: Long): VehicleDto {
         return vehicleService.getDtoById(id)
+    }
+
+    @GetMapping
+    fun getAllByMake(@RequestParam make: String): List<VehicleDto> {
+        return vehicleService.getAllByMake(make)
     }
 
     @PostMapping
